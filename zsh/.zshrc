@@ -1,3 +1,5 @@
+export ZSH="/Users/tylor/.oh-my-zsh"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -13,17 +15,21 @@ compinit
 # zsh auto-suggestion
 zstyle ':completion:*' menu select
 
-# terminal theme
-autoload -U promptinit && promptinit
-prompt filthy
+# zsh theme
+ZSH_THEME=robbyrussell
 
-# load node-version-manager (nvm)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+plugins=(
+  aws
+  docker
+  docker-compose
+  npm
+  nvm
+  themes
+)
 
-source ~/.env
+source $ZSH/oh-my-zsh.sh
+# source ~/.env
 source ~/.config/zsh/env.zsh
-source ~/.config/zsh/plugins.zsh
+# source ~/.config/zsh/plugins.zsh
 source ~/.config/zsh/alias.zsh
 source ~/.config/zsh/functions.zsh
